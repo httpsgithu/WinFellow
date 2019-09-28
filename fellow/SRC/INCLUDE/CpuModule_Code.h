@@ -8375,13 +8375,6 @@ static void MOVE_1000(ULO*opc_data)
 	cpuSetDRegByte(opc_data[1], src);
 	cpuSetInstructionTime(4);
 }
-static void MOVE_1008(ULO*opc_data)
-{
-	UBY src = cpuGetARegByte(opc_data[0]);
-	cpuMoveB(src);
-	cpuSetDRegByte(opc_data[1], src);
-	cpuSetInstructionTime(4);
-}
 static void MOVE_1010(ULO*opc_data)
 {
 	UBY src = memoryReadByte(cpuEA02(opc_data[0]));
@@ -8455,14 +8448,6 @@ static void MOVE_103C(ULO*opc_data)
 static void MOVE_1080(ULO*opc_data)
 {
 	UBY src = cpuGetDRegByte(opc_data[0]);
-	ULO dstea = cpuEA02(opc_data[1]);
-	cpuMoveB(src);
-	memoryWriteByte(src, dstea);
-	cpuSetInstructionTime(8);
-}
-static void MOVE_1088(ULO*opc_data)
-{
-	UBY src = cpuGetARegByte(opc_data[0]);
 	ULO dstea = cpuEA02(opc_data[1]);
 	cpuMoveB(src);
 	memoryWriteByte(src, dstea);
@@ -8556,14 +8541,6 @@ static void MOVE_10C0(ULO*opc_data)
 	memoryWriteByte(src, dstea);
 	cpuSetInstructionTime(8);
 }
-static void MOVE_10C8(ULO*opc_data)
-{
-	UBY src = cpuGetARegByte(opc_data[0]);
-	ULO dstea = cpuEA03(opc_data[1], 1);
-	cpuMoveB(src);
-	memoryWriteByte(src, dstea);
-	cpuSetInstructionTime(8);
-}
 static void MOVE_10D0(ULO*opc_data)
 {
 	UBY src = memoryReadByte(cpuEA02(opc_data[0]));
@@ -8647,14 +8624,6 @@ static void MOVE_10FC(ULO*opc_data)
 static void MOVE_1100(ULO*opc_data)
 {
 	UBY src = cpuGetDRegByte(opc_data[0]);
-	ULO dstea = cpuEA04(opc_data[1], 1);
-	cpuMoveB(src);
-	memoryWriteByte(src, dstea);
-	cpuSetInstructionTime(8);
-}
-static void MOVE_1108(ULO*opc_data)
-{
-	UBY src = cpuGetARegByte(opc_data[0]);
 	ULO dstea = cpuEA04(opc_data[1], 1);
 	cpuMoveB(src);
 	memoryWriteByte(src, dstea);
@@ -8748,14 +8717,6 @@ static void MOVE_1140(ULO*opc_data)
 	memoryWriteByte(src, dstea);
 	cpuSetInstructionTime(12);
 }
-static void MOVE_1148(ULO*opc_data)
-{
-	UBY src = cpuGetARegByte(opc_data[0]);
-	ULO dstea = cpuEA05(opc_data[1]);
-	cpuMoveB(src);
-	memoryWriteByte(src, dstea);
-	cpuSetInstructionTime(12);
-}
 static void MOVE_1150(ULO*opc_data)
 {
 	UBY src = memoryReadByte(cpuEA02(opc_data[0]));
@@ -8839,14 +8800,6 @@ static void MOVE_117C(ULO*opc_data)
 static void MOVE_1180(ULO*opc_data)
 {
 	UBY src = cpuGetDRegByte(opc_data[0]);
-	ULO dstea = cpuEA06(opc_data[1]);
-	cpuMoveB(src);
-	memoryWriteByte(src, dstea);
-	cpuSetInstructionTime(14);
-}
-static void MOVE_1188(ULO*opc_data)
-{
-	UBY src = cpuGetARegByte(opc_data[0]);
 	ULO dstea = cpuEA06(opc_data[1]);
 	cpuMoveB(src);
 	memoryWriteByte(src, dstea);
@@ -8940,14 +8893,6 @@ static void MOVE_11C0(ULO*opc_data)
 	memoryWriteByte(src, dstea);
 	cpuSetInstructionTime(12);
 }
-static void MOVE_11C8(ULO*opc_data)
-{
-	UBY src = cpuGetARegByte(opc_data[0]);
-	ULO dstea = cpuEA70();
-	cpuMoveB(src);
-	memoryWriteByte(src, dstea);
-	cpuSetInstructionTime(12);
-}
 static void MOVE_11D0(ULO*opc_data)
 {
 	UBY src = memoryReadByte(cpuEA02(opc_data[0]));
@@ -9031,14 +8976,6 @@ static void MOVE_11FC(ULO*opc_data)
 static void MOVE_13C0(ULO*opc_data)
 {
 	UBY src = cpuGetDRegByte(opc_data[0]);
-	ULO dstea = cpuEA71();
-	cpuMoveB(src);
-	memoryWriteByte(src, dstea);
-	cpuSetInstructionTime(16);
-}
-static void MOVE_13C8(ULO*opc_data)
-{
-	UBY src = cpuGetARegByte(opc_data[0]);
 	ULO dstea = cpuEA71();
 	cpuMoveB(src);
 	memoryWriteByte(src, dstea);

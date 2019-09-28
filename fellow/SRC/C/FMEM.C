@@ -2040,21 +2040,9 @@ __inline  UWO memoryReadWord(ULO address)
     return memoryReadWordViaBankHandler(address);
   }
 
-  ULO memoryReadLongViaBankHandler(ULO address)
-  {
-    memoryOddRead(address);
-    return memory_bank_readlong[address >> 16](address);
-  }
-
   __inline ULO memoryReadLong(ULO address)
   {
-    UBY *memory_ptr = memory_bank_pointer[address>>16];
-    if ((memory_ptr != NULL) && !(address & 1))
-    {
-      UBY *p = memory_ptr + address;
-      return memoryReadLongFromPointer(p);
-    }
-    return memoryReadLongViaBankHandler(address);
+    return ((ULO)memoryReadWord(address) << 16) | ((ULO)memoryReadWord(address + 2));
   }
 
   void memoryWriteByte(UBY data, ULO address)
