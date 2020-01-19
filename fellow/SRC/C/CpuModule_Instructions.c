@@ -852,6 +852,7 @@ static void cpuAndCcrB()
 {
   UWO imm = cpuGetNextWord();
   cpuSetSR(cpuGetSR() & (0xffe0 | (imm & 0x1f)));
+  cpuSetInstructionTime(20);
 }
 
 /// <summary>
@@ -863,6 +864,7 @@ static void cpuAndSrW()
   {
     UWO imm = cpuGetNextWord();
     cpuUpdateSr(cpuGetSR() & imm);
+    cpuSetInstructionTime(20);
   }
   else
   {
@@ -877,6 +879,7 @@ static void cpuOrCcrB()
 {
   UWO imm = cpuGetNextWord();
   cpuSetSR(cpuGetSR() | (imm & 0x1f));
+  cpuSetInstructionTime(20);
 }
 
 /// <summary>
@@ -888,6 +891,7 @@ static void cpuOrSrW()
   {
     UWO imm = cpuGetNextWord();
     cpuUpdateSr(cpuGetSR() | imm);
+    cpuSetInstructionTime(20);
   }
   else
   {
@@ -902,6 +906,7 @@ static void cpuEorCcrB()
 {
   UWO imm = cpuGetNextWord();
   cpuSetSR(cpuGetSR() ^ (imm & 0x1f));
+  cpuSetInstructionTime(20);
 }
 
 /// <summary>
@@ -913,6 +918,7 @@ static void cpuEorSrW()
   {
     UWO imm = cpuGetNextWord();
     cpuUpdateSr(cpuGetSR() ^ imm);
+    cpuSetInstructionTime(20);
   }
   else
   {
@@ -1943,12 +1949,13 @@ static void cpuRte()
       cpuUpdateSr(newsr); // Because we can go from isp to msp here.
 
     } while (redo);
+
+    cpuSetInstructionTime(20);
   }
   else
   {
     cpuThrowPrivilegeViolationException();
   }
-  cpuSetInstructionTime(20);
 }
 
 /// <summary>
@@ -2440,6 +2447,10 @@ static void cpuChkW(UWO value, UWO ub)
   {
     cpuSetFlagN(FALSE);
     cpuThrowChkException();
+  }
+  else
+  {
+    cpuSetFlagN(FALSE);
   }
 }
 
@@ -3741,14 +3752,14 @@ ULO cpuExecuteInstruction(void)
   else
   {
     ULO oldSr = cpuGetSR();
-    UWO opcode;
+    cpuSetInstructionAborted(false);
 
 #ifdef CPU_INSTRUCTION_LOGGING
     cpuCallInstructionLoggingFunc();
 #endif
 
     cpuSetOriginalPC(cpuGetPC()); // Store pc and opcode for exception logging
-    opcode = cpuGetNextWord();
+    UWO opcode = cpuGetNextWord();
 
 #ifdef CPU_INSTRUCTION_LOGGING
     cpuSetCurrentOpcode(opcode);
@@ -3756,9 +3767,9 @@ ULO cpuExecuteInstruction(void)
 
     cpuSetInstructionTime(0);
 
-	cpu_opcode_data_current[opcode].instruction_func(
-			cpu_opcode_data_current[opcode].data);
-    if (oldSr & 0xc000)
+    cpu_opcode_data_current[opcode].instruction_func(cpu_opcode_data_current[opcode].data);
+
+    if (oldSr & 0xc000 && !cpuGetInstructionAborted())
     {
       // This instruction was traced
       ULO cycles = cpuGetInstructionTime();

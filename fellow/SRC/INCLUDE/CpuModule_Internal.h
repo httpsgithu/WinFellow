@@ -51,6 +51,8 @@ extern void cpuSetInstructionTime(ULO cycles);
 extern ULO cpuGetInstructionTime(void);
 extern void cpuSetOriginalPC(ULO pc);
 extern ULO cpuGetOriginalPC(void);
+extern void cpuSetInstructionAborted(bool aborted);
+extern bool cpuGetInstructionAborted();
 
 #ifdef CPU_INSTRUCTION_LOGGING
 

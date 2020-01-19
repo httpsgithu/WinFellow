@@ -584,12 +584,7 @@ unsigned int cgGetAddSubOrAndTime(unsigned int size, unsigned int eano, int ea_i
 unsigned int cgGetAddiSubiOriEoriTime(unsigned int size, unsigned int eano, char regtype)
 {
   unsigned int cycles;
-  if (regtype == 'G')
-  {
-    // CCR/SR
-    cycles = 20;
-  }
-  else if (size <= 2)
+  if (size <= 2)
   {
     if (eano <= 1) cycles = 8;
     else cycles = 12;
@@ -622,12 +617,7 @@ unsigned int cgGetCmpiTime(unsigned int size, unsigned int eano)
 unsigned int cgGetAndiTime(unsigned int size, unsigned int eano, char regtype)
 {
   unsigned int cycles = 0;
-  if (regtype == 'G')
-  {
-    // CCR/SR
-    cycles = 20;
-  }
-  else if (size <= 2)
+  if (size <= 2)
   {
     if (eano <= 1) cycles = 8;
     else cycles = 12;
@@ -647,12 +637,12 @@ unsigned int cgGetEorTime(unsigned int size, unsigned int eano, int ea_is_dst)
   if (size <= 2)
   {
     cycles = 4;
-    if (!ea_is_dst && cg_ea_memory[eano]) cycles += 4;
+    if (ea_is_dst && cg_ea_memory[eano]) cycles += 4;
   }
   else 
   {
     cycles = 8;
-    if (!ea_is_dst && cg_ea_memory[eano]) cycles += 4;
+    if (ea_is_dst && cg_ea_memory[eano]) cycles += 4;
   }
   cycles += cg_ea_time[cgGetSizeCycleIndex(size)][eano];
   return cycles;
@@ -684,28 +674,43 @@ unsigned int cgGetChkTime(unsigned int size, unsigned int eano)
 unsigned int cgGetBsetBchgTime(unsigned int size, unsigned int eano, char regtype)
 {
   unsigned int cycles = 0;
-  if (size <= 2) cycles = 6;
-  else cycles = 10;
 
-  if (regtype != 'D') cycles += 2;
+  // There is also a run-time addition of 2 cycles if bit-no >= 16 and the bit-no is in a register (Possible only for register destinations)
+  if (regtype == 'D')
+  {
+    // Dynamic includes time to write byte back to memory, if using a memory ea (byte)
+    if (eano >= 2) cycles = 8;
+    else cycles = 6;
+  }
+  else
+  {
+    // Static includes time to read additional immediate word, and to write byte back to memory, if using a memory ea (byte)
+    if (eano >= 2) cycles = 12;
+    else cycles = 10;
+  }
 
-  // There is also a run-time addition of 2 cycles if bit-no >= 16 and the bit-no is in a register
+  // Memory ea only used for byte size.
   cycles += cg_ea_time[cgGetSizeCycleIndex(size)][eano];
   return cycles;
 }
 
-unsigned int cgGetBclrTime(unsigned int size, unsigned int eano)
+unsigned int cgGetBclrTime(unsigned int size, unsigned int eano, char regtype)
 {
   unsigned int cycles = 0;
-  if (size <= 2)
+
+  // There is also a run-time addition of 2 cycles if bit-no >= 16 and the bit-no is in a register (Possible only for register destinations)
+  if (regtype == 'D')
   {
+    // Dynamic includes time to write byte back to memory, if using a memory ea (byte)
     cycles = 8;
   }
   else
   {
+    // Static includes time to read additional immediate word, and to write byte back to memory, if using a memory ea (byte)
     cycles = 12;
   }
-  // There is also a run-time addition of 2 cycles if bit-no >= 16 and the bit-no is in a register
+
+  // Memory ea only used for byte size.
   cycles += cg_ea_time[cgGetSizeCycleIndex(size)][eano];
   return cycles;
 }
@@ -767,7 +772,6 @@ unsigned int cgAdd(cpu_data *cpudata, cpu_instruction_info i)
     cgDeclareFunction(fname);
     cgMakeFunctionHeader(fname, templ_name);
     fprintf(codef, "\t%s();\n", i.function);
-    cgMakeInstructionTimeAbs(20);
     cgMakeFunctionFooter(fname, templ_name);
     cgCopyFunctionName(fname, cpudata[opcode].name, templ_name);
     cgSetModelMask(opcode, i.cpu_model_mask);
@@ -879,6 +883,7 @@ unsigned int cgAdd(cpu_data *cpudata, cpu_instruction_info i)
 		 (stricmp(i.instruction_name, "ORI") == 0) ||
 		 (stricmp(i.instruction_name, "EORI") == 0))
 	{
+          // SR/CCR handled elsewhere
 	  cgMakeInstructionTimeAbs(cgGetAddiSubiOriEoriTime(size, eano, regtype));
 	}
 	else if (stricmp(i.instruction_name, "CMPI") == 0)
@@ -887,7 +892,8 @@ unsigned int cgAdd(cpu_data *cpudata, cpu_instruction_info i)
 	}
 	else if (stricmp(i.instruction_name, "ANDI") == 0)
 	{
-	  cgMakeInstructionTimeAbs(cgGetAndiTime(size, eano, regtype));
+          // SR/CCR handled elsewhere
+          cgMakeInstructionTimeAbs(cgGetAndiTime(size, eano, regtype));
 	}
 	else if ((stricmp(i.instruction_name, "BSET") == 0) ||
 		 (stricmp(i.instruction_name, "BCHG") == 0))
@@ -905,11 +911,11 @@ unsigned int cgAdd(cpu_data *cpudata, cpu_instruction_info i)
 	{
 	  if (size == 4 && regtype == 'D')
 	  {
-	    cgMakeInstructionTimeAbsExtraAdd(cgGetBclrTime(size, eano), " + ((src >= 16) ? 2 : 0)");
+	    cgMakeInstructionTimeAbsExtraAdd(cgGetBclrTime(size, eano, regtype), " + ((src >= 16) ? 2 : 0)");
 	  }
 	  else
 	  {
-	    cgMakeInstructionTimeAbs(cgGetBclrTime(size, eano));
+	    cgMakeInstructionTimeAbs(cgGetBclrTime(size, eano, regtype));
 	  }
 	}
 	else if (stricmp(i.instruction_name, "BTST") == 0)
@@ -934,12 +940,12 @@ unsigned int cgAdd(cpu_data *cpudata, cpu_instruction_info i)
 	    cgSetData(opcode2, reg_cpu_data_index, (regtype == 'Q' || regtype == 'B') ? ((reg == 0) ? 8 : reg) : reg);
 	    if (stricmp(i.instruction_name, "DIVS") == 0)
 	    {
-	      cycles = 70;
+	      cycles = 150;
 	      cycles += cg_ea_time[cgGetSizeCycleIndex(size)][cgGetEaNo(eano, eareg)];
 	    }
 	    else if (stricmp(i.instruction_name, "DIVU") == 0)
 	    {
-	      cycles = 70;
+	      cycles = 132;
 	      cycles += cg_ea_time[cgGetSizeCycleIndex(size)][cgGetEaNo(eano, eareg)];
 	    }
 	    else if (stricmp(i.instruction_name, "DIVL") == 0)
