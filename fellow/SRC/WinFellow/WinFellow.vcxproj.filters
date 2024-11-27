@@ -1,0 +1,920 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="core C Files">
+      <UniqueIdentifier>{f1233a58-3b32-4d12-b31e-b80463b2a935}</UniqueIdentifier>
+      <Extensions>*.c</Extensions>
+    </Filter>
+    <Filter Include="core C Header Files">
+      <UniqueIdentifier>{dd317119-d22e-455c-949a-415b2b87611c}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+    <Filter Include="UAE Filesystem Files">
+      <UniqueIdentifier>{4264d31b-2942-4bd8-bdc6-cd6d14043e6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ADF Compression Files">
+      <UniqueIdentifier>{53d81c73-9144-4f38-bbc1-a64a69d1cf1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ADF Compression Files\xDMS C Files">
+      <UniqueIdentifier>{d74d2d7b-243c-4a2a-a8d8-849fa6fb6a7e}</UniqueIdentifier>
+      <Extensions>.c</Extensions>
+    </Filter>
+    <Filter Include="ADF Compression Files\xDMS Header Files">
+      <UniqueIdentifier>{1c2810e7-946d-495e-a859-458fc7c8bf5d}</UniqueIdentifier>
+      <Extensions>.h</Extensions>
+    </Filter>
+    <Filter Include="ADF Compression Files\zlib C Files">
+      <UniqueIdentifier>{04159f5a-6409-4d14-96d2-2ca3ba131c19}</UniqueIdentifier>
+      <Extensions>.c</Extensions>
+    </Filter>
+    <Filter Include="ADF Compression Files\zlib Header Files">
+      <UniqueIdentifier>{8532dc41-612a-415f-87c3-16ede041b12d}</UniqueIdentifier>
+      <Extensions>.h</Extensions>
+    </Filter>
+    <Filter Include="bitmaps">
+      <UniqueIdentifier>{53c498c0-e92d-450b-b0c1-8f9e89d6823e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{553e6015-3e36-47bc-9689-ba1e5cbb727c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="icons">
+      <UniqueIdentifier>{33d76fb7-c7ea-48f4-88c8-dc1922fdb79d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="graphics">
+      <UniqueIdentifier>{b87ae76d-615b-4620-818c-936fab6ea5a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DXGI">
+      <UniqueIdentifier>{e654a72c-db78-41a3-a44b-3f7378035727}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="automation">
+      <UniqueIdentifier>{b409784d-dbc0-4bf3-81f0-589234dd4554}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IPF Access API">
+      <UniqueIdentifier>{8a43c7b9-d400-45fc-8ff4-a80b9c0718be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows">
+      <UniqueIdentifier>{0adab2c7-b505-44b5-a2c6-67ce8f273312}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VirtualHost">
+      <UniqueIdentifier>{25b2f21a-8c0b-4ab7-85fc-86be576fed09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Service">
+      <UniqueIdentifier>{2cc8170f-f170-4206-b604-cee8ba2d1642}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Driver">
+      <UniqueIdentifier>{5cd84858-a406-4181-9bfd-143e9807bbaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\Driver\Sound">
+      <UniqueIdentifier>{d3362cca-2d02-4d07-8940-1a7b0be5fb67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DebugApi">
+      <UniqueIdentifier>{f4c581b1-69af-4198-938c-5825eab5edbf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="xdms\C\crc_csum.c">
+      <Filter>ADF Compression Files\xDMS C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xdms\C\getbits.c">
+      <Filter>ADF Compression Files\xDMS C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xdms\C\maketbl.c">
+      <Filter>ADF Compression Files\xDMS C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xdms\C\pfile.c">
+      <Filter>ADF Compression Files\xDMS C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xdms\C\tables.c">
+      <Filter>ADF Compression Files\xDMS C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xdms\C\u_deep.c">
+      <Filter>ADF Compression Files\xDMS C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xdms\C\u_heavy.c">
+      <Filter>ADF Compression Files\xDMS C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xdms\C\u_init.c">
+      <Filter>ADF Compression Files\xDMS C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xdms\C\u_medium.c">
+      <Filter>ADF Compression Files\xDMS C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xdms\C\u_quick.c">
+      <Filter>ADF Compression Files\xDMS C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="xdms\C\u_rle.c">
+      <Filter>ADF Compression Files\xDMS C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\C\adler32.c">
+      <Filter>ADF Compression Files\zlib C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\C\compress.c">
+      <Filter>ADF Compression Files\zlib C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\C\crc32.c">
+      <Filter>ADF Compression Files\zlib C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\C\deflate.c">
+      <Filter>ADF Compression Files\zlib C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\C\inffast.c">
+      <Filter>ADF Compression Files\zlib C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\C\inflate.c">
+      <Filter>ADF Compression Files\zlib C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\C\inftrees.c">
+      <Filter>ADF Compression Files\zlib C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\C\trees.c">
+      <Filter>ADF Compression Files\zlib C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\C\uncompr.c">
+      <Filter>ADF Compression Files\zlib C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\C\zutil.c">
+      <Filter>ADF Compression Files\zlib C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="automation\Automator.cpp">
+      <Filter>automation</Filter>
+    </ClCompile>
+    <ClCompile Include="automation\Script.cpp">
+      <Filter>automation</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Blitter.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\BusScheduler.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\chipset.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\ComplexInterfaceAdapter.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Configuration.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\LegacyCopper.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\CopperRegisters.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\CpuIntegration.c">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\CpuModule.c">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\CpuModule_Disassembler.c">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\CpuModule_EffectiveAddress.c">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\CpuModule_Exceptions.c">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\CpuModule_Flags.c">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\CpuModule_Instructions.c">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\CpuModule_InternalState.c">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\CpuModule_Interrupts.c">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\CpuModule_Logging.c">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\CpuModule_StackFrameGen.c">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Renderer.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\draw_interlace_control.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\draw_pixelrenderers.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\FellowMain.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\FilesystemIntegration.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\FloppyDisk.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\MemoryInterface.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Gameports.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\GraphicsPipeline.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\interrupt.c">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Keyboard.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\LineExactCopper.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\LineExactSprites.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\FellowList.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\modrip.c">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\rtc.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Sound.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\Sprites.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\SpriteMerger.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\SpriteP2CDecoder.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\SpriteRegisters.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\uart.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\xdmswrap.c">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C\zlibwrap.c">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DXGI\GfxDrvDXGI.cpp">
+      <Filter>DXGI</Filter>
+    </ClCompile>
+    <ClCompile Include="DXGI\GfxDrvDXGIAdapter.cpp">
+      <Filter>DXGI</Filter>
+    </ClCompile>
+    <ClCompile Include="DXGI\GfxDrvDXGIAdapterEnumerator.cpp">
+      <Filter>DXGI</Filter>
+    </ClCompile>
+    <ClCompile Include="DXGI\GfxDrvDXGIErrorLogger.cpp">
+      <Filter>DXGI</Filter>
+    </ClCompile>
+    <ClCompile Include="DXGI\GfxDrvDXGIMode.cpp">
+      <Filter>DXGI</Filter>
+    </ClCompile>
+    <ClCompile Include="DXGI\GfxDrvDXGIModeEnumerator.cpp">
+      <Filter>DXGI</Filter>
+    </ClCompile>
+    <ClCompile Include="DXGI\GfxDrvDXGIOutput.cpp">
+      <Filter>DXGI</Filter>
+    </ClCompile>
+    <ClCompile Include="DXGI\GfxDrvDXGIOutputEnumerator.cpp">
+      <Filter>DXGI</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\BitplaneDMA.cpp">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\BitplaneDraw.cpp">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\CycleExactCopper.cpp">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\CycleExactSprites.cpp">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\DDFStateMachine.cpp">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\DIWXStateMachine.cpp">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\DIWYStateMachine.cpp">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\Graphics.cpp">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\GraphicsEvent.cpp">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\GraphicsEventQueue.cpp">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\Logger.cpp">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\PixelSerializer.cpp">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\Planar2ChunkyDecoder.cpp">
+      <Filter>graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="IPF\CapsPlug.cpp">
+      <Filter>IPF Access API</Filter>
+    </ClCompile>
+    <ClCompile Include="uae\AUTOCONF.C">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uae\EXPANSIO.C">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uae\FILESYS.C">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uae\filesys_win32.c">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uae\fsdb.c">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uae\fsdb_win32.c">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uae\FSUSAGE.C">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uae\HARDFILE.C">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClCompile>
+    <ClCompile Include="uae\UAESUPP.C">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\CommonControlWrapper.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\FilesystemAutomount.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\GraphicsDriver.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\DirectDrawDriver.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\GfxDrvCommon.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\IniFile.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\JoystickDriver.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\KeyboardDriver.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\KeyboardParser.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\ModripWin32.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\MouseDriver.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\RetroPlatform.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\RetroPlatformGuestIPC.c">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\SystemInformation.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\Timers.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\WindowsDebugger.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\WindowsUI.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\WindowsMain.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\CapsIntegration.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\C\gzclose.c">
+      <Filter>ADF Compression Files\zlib C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\C\gzlib.c">
+      <Filter>ADF Compression Files\zlib C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\C\gzread.c">
+      <Filter>ADF Compression Files\zlib C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\C\gzwrite.c">
+      <Filter>ADF Compression Files\zlib C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="zlib\C\infback.c">
+      <Filter>ADF Compression Files\zlib C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\Driver\Sound\DirectSoundDriver.cpp">
+      <Filter>Windows\Driver\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="C\WavFileWriter.cpp">
+      <Filter>core C Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualHost\CoreFactory.cpp">
+      <Filter>VirtualHost</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\Service\FileopsWin32.cpp">
+      <Filter>Windows\Service</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\Service\Hud.cpp">
+      <Filter>Windows\Service</Filter>
+    </ClCompile>
+    <ClCompile Include="Windows\Service\RetroPlatformWrapper.cpp">
+      <Filter>Windows\Service</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugApi\M68K.cpp">
+      <Filter>DebugApi</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugApi\MemorySystem.cpp">
+      <Filter>DebugApi</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="xdms\include\cdata.h">
+      <Filter>ADF Compression Files\xDMS Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xdms\include\crc_csum.h">
+      <Filter>ADF Compression Files\xDMS Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xdms\include\getbits.h">
+      <Filter>ADF Compression Files\xDMS Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xdms\include\maketbl.h">
+      <Filter>ADF Compression Files\xDMS Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xdms\include\pfile.h">
+      <Filter>ADF Compression Files\xDMS Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xdms\include\tables.h">
+      <Filter>ADF Compression Files\xDMS Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xdms\include\u_deep.h">
+      <Filter>ADF Compression Files\xDMS Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xdms\include\u_heavy.h">
+      <Filter>ADF Compression Files\xDMS Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xdms\include\u_init.h">
+      <Filter>ADF Compression Files\xDMS Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xdms\include\u_medium.h">
+      <Filter>ADF Compression Files\xDMS Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xdms\include\u_quick.h">
+      <Filter>ADF Compression Files\xDMS Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xdms\include\u_rle.h">
+      <Filter>ADF Compression Files\xDMS Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="xdms\include\xdms.h">
+      <Filter>ADF Compression Files\xDMS Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\include\crc32.h">
+      <Filter>ADF Compression Files\zlib Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\include\deflate.h">
+      <Filter>ADF Compression Files\zlib Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\include\inffast.h">
+      <Filter>ADF Compression Files\zlib Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\include\inffixed.h">
+      <Filter>ADF Compression Files\zlib Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\include\inflate.h">
+      <Filter>ADF Compression Files\zlib Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\include\inftrees.h">
+      <Filter>ADF Compression Files\zlib Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\include\trees.h">
+      <Filter>ADF Compression Files\zlib Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\include\zconf.h">
+      <Filter>ADF Compression Files\zlib Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\include\zlib.h">
+      <Filter>ADF Compression Files\zlib Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zlib\include\zutil.h">
+      <Filter>ADF Compression Files\zlib Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gui_general.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI_versioninfo.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="automation\Automator.h">
+      <Filter>automation</Filter>
+    </ClInclude>
+    <ClInclude Include="automation\Script.h">
+      <Filter>automation</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\Blitter.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\BusScheduler.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\chipset.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\ComplexInterfaceAdapter.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\Configuration.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\LegacyCopper.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\CopperRegisters.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\CpuIntegration.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\CpuModule.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\CpuModule_Code.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\CpuModule_Data.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\CpuModule_Decl.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\CpuModule_Disassembler.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\CpuModule_DisassemblerFunc.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\CpuModule_Internal.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\CpuModule_Memory.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\CpuModule_Profile.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\Renderer.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\draw_interlace_control.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\draw_pixelrenderers.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\FellowMain.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\FilesystemIntegration.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\FloppyDisk.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\MemoryInterface.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\FpsFont.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\Gameports.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\GraphicsDriver.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\GraphicsPipeline.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\IniFile.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\interrupt.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\JoystickDriver.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\Keyboard.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\KeyboardDriver.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\Keycode.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\LineExactCopper.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\LineExactSprites.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\FellowList.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\modrip.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\MouseDriver.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\rtc.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\Sprites.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\SpriteMerger.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\SpriteP2CDecoder.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\SpriteRegisters.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\Timers.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\WindowsUI.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INCLUDE\zlibwrap.h">
+      <Filter>core C Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DXGI\GfxDrvDXGI.h">
+      <Filter>DXGI</Filter>
+    </ClInclude>
+    <ClInclude Include="DXGI\GfxDrvDXGIAdapter.h">
+      <Filter>DXGI</Filter>
+    </ClInclude>
+    <ClInclude Include="DXGI\GfxDrvDXGIAdapterEnumerator.h">
+      <Filter>DXGI</Filter>
+    </ClInclude>
+    <ClInclude Include="DXGI\GfxDrvDXGIErrorLogger.h">
+      <Filter>DXGI</Filter>
+    </ClInclude>
+    <ClInclude Include="DXGI\GfxDrvDXGIMode.h">
+      <Filter>DXGI</Filter>
+    </ClInclude>
+    <ClInclude Include="DXGI\GfxDrvDXGIModeEnumerator.h">
+      <Filter>DXGI</Filter>
+    </ClInclude>
+    <ClInclude Include="DXGI\GfxDrvDXGIOutput.h">
+      <Filter>DXGI</Filter>
+    </ClInclude>
+    <ClInclude Include="DXGI\GfxDrvDXGIOutputEnumerator.h">
+      <Filter>DXGI</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\BitplaneDMA.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\BitplaneDraw.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\CycleExactCopper.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\CycleExactSprites.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\DDFStateMachine.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\DIWXStateMachine.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\DIWYStateMachine.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\Graphics.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\GraphicsEvent.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\GraphicsEventQueue.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\Logger.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\PixelSerializer.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\Planar2ChunkyDecoder.h">
+      <Filter>graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="IPF\CapsAPI.h">
+      <Filter>IPF Access API</Filter>
+    </ClInclude>
+    <ClInclude Include="IPF\CapsPlug.h">
+      <Filter>IPF Access API</Filter>
+    </ClInclude>
+    <ClInclude Include="IPF\Comtype.h">
+      <Filter>IPF Access API</Filter>
+    </ClInclude>
+    <ClInclude Include="uae\AUTOCONF.H">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uae\EXECLIB.H">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uae\FILESYS.H">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uae\filesys_win32.h">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uae\fsdb.h">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uae\FSUSAGE.H">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uae\PENGUIN.H">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uae\POSIXEMU.H">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uae\UAE2FELL.H">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClInclude>
+    <ClInclude Include="uae\UAEFSYS.H">
+      <Filter>UAE Filesystem Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\CommonControlWrapper.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\dxver.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\DirectDrawDriver.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\GfxDrvCommon.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\KeyboardParser.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\ModripWin32.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\RetroPlatform.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\RetroPlatformGuestIPC.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\RetroPlatformIPC.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\SystemInformation.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\versioninfo.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\versioninfo-wcrev.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\WindowsDebugger.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\WindowsMain.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\CapsIntegration.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\Driver\Sound\DirectSoundDriver.h">
+      <Filter>Windows\Driver\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\Driver\Sound\DirectSoundMode.h">
+      <Filter>Windows\Driver\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualHost\CoreFactory.h">
+      <Filter>VirtualHost</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\Service\FileopsWin32.h">
+      <Filter>Windows\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\Service\Hud.h">
+      <Filter>Windows\Service</Filter>
+    </ClInclude>
+    <ClInclude Include="Windows\Service\RetroPlatformWrapper.h">
+      <Filter>Windows\Service</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GUI_general.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="GUI_versioninfo.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icons\arrow.bmp">
+      <Filter>icons</Filter>
+    </Image>
+    <Image Include="icons\cpu.ico">
+      <Filter>icons</Filter>
+    </Image>
+    <Image Include="icons\dfloppy.ico">
+      <Filter>icons</Filter>
+    </Image>
+    <Image Include="icons\display.ico">
+      <Filter>icons</Filter>
+    </Image>
+    <Image Include="icons\filesystem.ico">
+      <Filter>icons</Filter>
+    </Image>
+    <Image Include="icons\floppy.ico">
+      <Filter>icons</Filter>
+    </Image>
+    <Image Include="icons\harddrives.ico">
+      <Filter>icons</Filter>
+    </Image>
+    <Image Include="icons\sound.ico">
+      <Filter>icons</Filter>
+    </Image>
+    <Image Include="bitmaps\disk_led_disabled_cool.bmp">
+      <Filter>bitmaps</Filter>
+    </Image>
+    <Image Include="bitmaps\disk_led_off_cool.bmp">
+      <Filter>bitmaps</Filter>
+    </Image>
+    <Image Include="bitmaps\disk_led_on_cool.bmp">
+      <Filter>bitmaps</Filter>
+    </Image>
+    <Image Include="bitmaps\power_led_off_cool.bmp">
+      <Filter>bitmaps</Filter>
+    </Image>
+    <Image Include="bitmaps\power_led_on_cool.bmp">
+      <Filter>bitmaps</Filter>
+    </Image>
+    <Image Include="bitmaps\winfellow_logo_small.bmp">
+      <Filter>bitmaps</Filter>
+    </Image>
+    <Image Include="icons\winfellow.ico">
+      <Filter>icons</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="DXGI\PixelShader.hlsl">
+      <Filter>DXGI</Filter>
+    </FxCompile>
+    <FxCompile Include="DXGI\VertexShader.hlsl">
+      <Filter>DXGI</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="IPF\LICENSE.txt">
+      <Filter>IPF Access API</Filter>
+    </Text>
+    <Text Include="uae\readme.txt">
+      <Filter>UAE Filesystem Files</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

@@ -6,9 +6,13 @@ However the project files contained in the Git repository are built using Micros
 
 Currently the following software should be used for development in the Git master branch:
 
-- Visual Studio 2019
+- Visual Studio 2022, including the following additions:
 
-The community edition of Visual Studio 2019 can be used to compile WinFellow; it even features debugging and profiling.
+  - the extension "Format document on save" should be installed, to ensure that the solution's .clang-format file is applied on each save
+  - reformatting of the whole solution can also be done by executing the following command in the solution directory via WSL:
+    `find . -iregex '.*\.\(c\|cpp\|hpp\|cc\|cxx\|h\)' -exec clang-format -style=file -i {} \;`
+
+The community edition of Visual Studio 2022 can be used to compile WinFellow; it even features debugging and profiling.
 
 For access to the Git repository, the <a href="http://desktop.github.com">GitHub Desktop</a> client is required.
 
@@ -17,12 +21,7 @@ For basic contributions, the components mentioned above should be sufficient.
 To be able to compile release builds using the automated build script, a number of additional components must be
 installed and added to the search path:
 
-- Visual Studio 2019 with C++ desktop development components must be installed, including the following additions:
-    - the legacy XP toolset components (v141_xp; this is described in a little more detail in <a href="https://docs.microsoft.com/en-us/cpp/build/configuring-programs-for-windows-xp?view=vs-2019">this article</a>.
-    - due to a Visual Studio bug, CppUnitTest.h can sometimes not be located; as a workaround, the following command can be executed (see <a href="https://developercommunity.visualstudio.com/content/problem/472005/vs-2019-rc-cannot-open-include-file-cppunittesth-w.html">here</a>):
-
-    `move "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Community\Common7\IDE\VC\VCTargets\*.props" "%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v150"`
-
+- Visual Studio 2022 with C++ desktop development components must be installed
 - PowerShell execution policy must be set to unrestricted (both for the 32 as well as the 64 bit PowerShell)
 - Git for Windows 64 Bit must be installed and added to the search path; usually Notepad++ is used as default editor
 - the module posh-git must be installed
@@ -42,6 +41,7 @@ A documentation (work in progress) targeted specifically at developers can also 
 
 Coding Style Guidelines
 -----------------------
+
 To ensure consistency across the different modules that are developed by different authors, we
 believe it is reasonable to have a common set of guidelines all developers follow.
 

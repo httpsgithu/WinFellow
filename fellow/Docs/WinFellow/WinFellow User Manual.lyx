@@ -112,7 +112,7 @@ User Manual
 \end_layout
 
 \begin_layout Date
-v0.5.9 (2019/07/01)
+v0.5.12 (2024/04/01)
 \end_layout
 
 \begin_layout Author
@@ -210,7 +210,7 @@ Welcome to the WinFellow Amiga Emulator, a software emulation of the Commodore
  The emulator runs on an IBM compatible PC with a Windows operation system
  installed.
  Different Windows versions can be used, the emulator has been tested successful
-ly on operating systems ranging from Windows XP to Windows 10.
+ly on operating systems ranging from Windows 7 to Windows 10.
 \end_layout
 
 \begin_layout Standard
@@ -254,80 +254,16 @@ WinFellow was created by Petter Schau; it is based on the Fellow Amiga Emulator
 \end_layout
 
 \begin_layout Part
-Contributing to WinFellow
-\end_layout
-
-\begin_layout Standard
-WinFellow is developed by a team of volunteers in their spare time; you
- are very welcome to make contributions of your own.
- Contributions can be improvements to the code, new features, but can also
- include documentation updates or whatever else you feel could be an improvement.
- It is best if you find something you want to work on rather than mailing
- us and ask to be assigned a task.
- Since WinFellow is developed on an idealistic basis, the basic idea is
- that everyone should do something they like.
-\end_layout
-
-\begin_layout Standard
-When you start doing something it is wise to mail some of us in advance
- to make sure no one is doing double work.
- Since WinFellow is developed as open source software hosted on GitHub,
- it is easy to contribute.
- You can fork the source code of WinFellow, create a branch for your topic
- and start commiting changes to it; your changes can be submitted to our
- project in form of a pull request.
- Raising a pull request early on allows us to discuss your request early,
- so that we can see if/how your request may fit into WinFellow before you
- put any effort into it.
-\end_layout
-
-\begin_layout Standard
-There is a how-to guide in MarkDown syntax within the source code archive
- in the directory 
-\begin_inset Quotes eld
-\end_inset
-
-fellow
-\backslash
-doxygen
-\backslash
-Documentation
-\begin_inset Quotes erd
-\end_inset
-
- called 
-\begin_inset Quotes eld
-\end_inset
-
-HOWTO Development environment setup.md
-\begin_inset Quotes erd
-\end_inset
-
-, that can help you get started setting up a development environment for
- WinFellow.
- 
-\end_layout
-
-\begin_layout Standard
-Feel free to mail us (petschau@gmail.com / torsten.enderling@gmail.com) if
- you are interested in helping!
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Part
 Release Notes
 \end_layout
 
 \begin_layout Section*
-What's New in WinFellow 0.5.9?
+What's New in WinFellow 0.5.12?
 \end_layout
 
 \begin_layout Standard
 Thank you for your interest in WinFellow.
- Compared to the earlier version 0.5.8, the following changes are included
+ Compared to the earlier version 0.5.11, the following changes are included
  in this build:
 \end_layout
 
@@ -337,13 +273,7 @@ New features:
 
 \begin_deeper
 \begin_layout Itemize
-implemented a new menu option to allow configuration of the emulation pause
- behaviour when the window focus is lost/emulation is running in the background
-\end_layout
-
-\begin_layout Itemize
-the floppy read-only state can now be adjusted on the fly, without having
- to restart the emulator
+tbd
 \end_layout
 
 \end_deeper
@@ -353,8 +283,7 @@ Bug fixes:
 
 \begin_deeper
 \begin_layout Itemize
-when using alt-tab to switch to different windows, the tab keypress is no
- longer passed on to the emulation session
+tbd
 \end_layout
 
 \end_deeper
@@ -364,19 +293,7 @@ Maintenance updates:
 
 \begin_deeper
 \begin_layout Itemize
-zlib was updated to version 1.2.11
-\end_layout
-
-\begin_layout Itemize
-xDMS was updated to version 1.3.2
-\end_layout
-
-\begin_layout Itemize
-Visual Studio 2022 and the Windows 11 SDK are used
-\end_layout
-
-\begin_layout Itemize
-RetroPlatform include has been updated
+tbd
 \end_layout
 
 \end_deeper
@@ -396,14 +313,6 @@ System Requirements
 \begin_layout Standard
 WinFellow is highly optimized for execution on low-end systems.
  It can be executed on any of the following operating systems:
-\end_layout
-
-\begin_layout Itemize
-Windows XP
-\end_layout
-
-\begin_layout Itemize
-Windows Vista
 \end_layout
 
 \begin_layout Itemize
@@ -449,23 +358,7 @@ Direct3D 11
 Support for Direct3D 11 can be enabled in the display configuration settings,
  which enhances performance on systems that support it.
  It requires DirectX 11 to be installed, which is available for Windows
- Vista, 7, 8, 8.1 and 10.
- 
-\end_layout
-
-\begin_layout Standard
-For execution on Windows Vista, the 
-\begin_inset CommandInset href
-LatexCommand href
-name "platform update (KB971644)"
-target "https://support.microsoft.com/en-us/kb/971644"
-literal "false"
-
-\end_inset
-
- should be installed, as it contains required updates to DirectX.
- The graphics card has to provide hardware acceleration for Direct3D.
- 
+ 7, 8, 8.1 and 10.
 \begin_inset Newpage pagebreak
 \end_inset
 
@@ -641,7 +534,7 @@ If your PC is still equipped with a serial port, you can utilize a null-modem
  cable to perform a Zmodem transfer between an Amiga and a PC.
  Simply plug the cable into a serial port on each machine, load up a terminal
  package such as Terminus, NComm or Term on the Amiga, or HyperTerminal
- (if you are still on Windows XP) or an alternative like 
+ or an alternative like 
 \begin_inset CommandInset href
 LatexCommand href
 name "RealTerm"
@@ -1333,6 +1226,36 @@ That's it, you should see the emulation window booting the KickROM (switching
 \end_layout
 
 \begin_layout Section
+Performance
+\end_layout
+
+\begin_layout Subsection
+Sound playback is choppy when the emulation window is in the background
+\end_layout
+
+\begin_layout Standard
+Many people like to run the emulator in the background to be able to listen
+ to music.
+ Should you encounter stuttering playback in Direct3D graphics mode, check
+ your graphics card's driver settings and ensure that there is no frame
+ limit configured for background applications.
+\end_layout
+
+\begin_layout Standard
+For nVidia GPUs: the nVidia Control Panel contains a setting called 
+\begin_inset Quotes eld
+\end_inset
+
+Background Application Max Frame Rate
+\begin_inset Quotes erd
+\end_inset
+
+, which defaults to 30 frames per second.
+ Increase the value to 50, or disable the limit to have proper background
+ audio playback.
+\end_layout
+
+\begin_layout Section
 Floppy disk images
 \end_layout
 
@@ -2002,6 +1925,66 @@ literal "false"
 \end_layout
 
 \begin_layout Part
+Contributing to WinFellow
+\end_layout
+
+\begin_layout Standard
+WinFellow is developed by a team of volunteers in their spare time; you
+ are very welcome to make contributions of your own.
+ Contributions can be improvements to the code, new features, but can also
+ include documentation updates or whatever else you feel could be an improvement.
+ It is best if you find something you want to work on rather than mailing
+ us and ask to be assigned a task.
+ Since WinFellow is developed on an idealistic basis, the basic idea is
+ that everyone should do something they like.
+\end_layout
+
+\begin_layout Standard
+When you start doing something it is wise to mail some of us in advance
+ to make sure no one is doing double work.
+ Since WinFellow is developed as open source software hosted on GitHub,
+ it is easy to contribute.
+ You can fork the source code of WinFellow, create a branch for your topic
+ and start commiting changes to it; your changes can be submitted to our
+ project in form of a pull request.
+ Raising a pull request early on allows us to discuss your request early,
+ so that we can see if/how your request may fit into WinFellow before you
+ put any effort into it.
+\end_layout
+
+\begin_layout Standard
+There is a how-to guide in MarkDown syntax within the source code archive
+ in the directory 
+\begin_inset Quotes eld
+\end_inset
+
+fellow
+\backslash
+doxygen
+\backslash
+Documentation
+\begin_inset Quotes erd
+\end_inset
+
+ called 
+\begin_inset Quotes eld
+\end_inset
+
+HOWTO Development environment setup.md
+\begin_inset Quotes erd
+\end_inset
+
+, that can help you get started setting up a development environment for
+ WinFellow.
+ 
+\end_layout
+
+\begin_layout Standard
+Feel free to mail us (petschau@gmail.com / torsten.enderling@gmail.com) if
+ you are interested in helping!
+\end_layout
+
+\begin_layout Part
 Credits
 \end_layout
 
@@ -2024,14 +2007,6 @@ Petter Schau
 \begin_layout Standard
 \noindent
 with help from
-\end_layout
-
-\begin_layout Standard
-
-\noun on
-Worfje
-\noun default
- (worfje@gmx.net)
 \end_layout
 
 \begin_layout Standard
@@ -2224,6 +2199,34 @@ Programming Contributions
 \end_layout
 
 \begin_layout Standard
+
+\noun on
+Worfje
+\noun default
+ (worfje@gmx.net)
+\end_layout
+
+\begin_layout Itemize
+cross-platform development
+\end_layout
+
+\begin_layout Itemize
+graphics module
+\end_layout
+
+\begin_layout Itemize
+sound module
+\end_layout
+
+\begin_layout Itemize
+GUI
+\end_layout
+
+\begin_layout Itemize
+many changes over the years...
+\end_layout
+
+\begin_layout Standard
 \noindent
 
 \noun on
@@ -2389,6 +2392,11 @@ Oscar Sillani
 \noun default
  and anyone else who may have been involved) for their support integrating
  WinFellow into Amiga Forever, and for their continuing efforts.
+\end_layout
+
+\begin_layout Standard
+Thanks also go out to Toni Wilen for making his great cputester tool available
+ for public use.
 \end_layout
 
 \begin_layout Section*

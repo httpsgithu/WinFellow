@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="hardfile">
+      <UniqueIdentifier>{756ba8f1-61b2-4e39-bdda-00bb4ae8dda0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hardfile\hunks">
+      <UniqueIdentifier>{26237ddb-c5c8-46fb-af58-c40b4ba26e3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hardfile\rdb">
+      <UniqueIdentifier>{58c24674-4d13-4520-9eae-714554b91716}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="testdata">
+      <UniqueIdentifier>{9462dd8d-ef41-48c8-bbba-43bbd2a5454c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="testdata\hardfile">
+      <UniqueIdentifier>{65f48b9a-8b6b-4ae8-a4ee-864b016ee187}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="hardfile\hunks\BSSHunkTest.cpp">
+      <Filter>hardfile\hunks</Filter>
+    </ClCompile>
+    <ClCompile Include="hardfile\hunks\CodeHunkTest.cpp">
+      <Filter>hardfile\hunks</Filter>
+    </ClCompile>
+    <ClCompile Include="hardfile\hunks\DataHunkTest.cpp">
+      <Filter>hardfile\hunks</Filter>
+    </ClCompile>
+    <ClCompile Include="hardfile\hunks\EndHunkTest.cpp">
+      <Filter>hardfile\hunks</Filter>
+    </ClCompile>
+    <ClCompile Include="hardfile\hunks\HeaderHunkTest.cpp">
+      <Filter>hardfile\hunks</Filter>
+    </ClCompile>
+    <ClCompile Include="hardfile\hunks\HunkFactoryTest.cpp">
+      <Filter>hardfile\hunks</Filter>
+    </ClCompile>
+    <ClCompile Include="hardfile\hunks\HunkParserTest.cpp">
+      <Filter>hardfile\hunks</Filter>
+    </ClCompile>
+    <ClCompile Include="hardfile\hunks\RawDataReaderTest.cpp">
+      <Filter>hardfile\hunks</Filter>
+    </ClCompile>
+    <ClCompile Include="hardfile\hunks\Reloc32HunkTest.cpp">
+      <Filter>hardfile\hunks</Filter>
+    </ClCompile>
+    <ClCompile Include="hardfile\rdb\RDBHandlerTest.cpp">
+      <Filter>hardfile\rdb</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="testdata\hardfile\rdb\BlankWithoutRDB_OFS.hdf">
+      <Filter>testdata\hardfile</Filter>
+    </None>
+    <None Include="testdata\hardfile\rdb\BlankWithRDB_FFS13.hdf">
+      <Filter>testdata\hardfile</Filter>
+    </None>
+    <None Include="testdata\hardfile\rdb\BlankWithRDB_PFS.hdf">
+      <Filter>testdata\hardfile</Filter>
+    </None>
+    <None Include="testdata\hardfile\rdb\BlankWithRDB_SFS.hdf">
+      <Filter>testdata\hardfile</Filter>
+    </None>
+    <None Include="testdata\hardfile\hunks\FastFileSystem13">
+      <Filter>testdata\hardfile</Filter>
+    </None>
+    <None Include="testdata\hardfile\hunks\FastFileSystem31">
+      <Filter>testdata\hardfile</Filter>
+    </None>
+    <None Include="testdata\hardfile\hunks\ProfFileSystem_195">
+      <Filter>testdata\hardfile</Filter>
+    </None>
+    <None Include="testdata\hardfile\hunks\ProfFileSystem_195_68020+">
+      <Filter>testdata\hardfile</Filter>
+    </None>
+    <None Include="testdata\hardfile\hunks\SmartFilesystem">
+      <Filter>testdata\hardfile</Filter>
+    </None>
+    <None Include="testdata\hardfile\rdb\WithRDBInvalidFileSystemHeaderCheckSum.hdf">
+      <Filter>testdata\hardfile</Filter>
+    </None>
+    <None Include="testdata\hardfile\rdb\WithRDBInvalidLSegBlockCheckSum.hdf">
+      <Filter>testdata\hardfile</Filter>
+    </None>
+    <None Include="testdata\hardfile\rdb\WithRDBInvalidPartitionCheckSum.hdf">
+      <Filter>testdata\hardfile</Filter>
+    </None>
+    <None Include="testdata\hardfile\rdb\WithRDSKMarkerInvalidCheckSum.hdf">
+      <Filter>testdata\hardfile</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,43 @@
+cinst visualstudio2022community --params "--add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --add Microsoft.VisualStudio.Component.Windows11SDK.22000" # Windows 11 SDK
+
+cinst vswhere
+cinst poshgit
+cinst nsis
+cinst 7zip
+cinst miktex
+cinst lyx
+cinst doxygen.install
+cinst graphviz
+cinst Ghostscript
+
+# optional/nice-to-have components
+cinst msbuild-structured-log-viewer
+cinst github-desktop
+cinst vscode
+cinst notepadplusplus
+cinst everything
+
+# website updates
+cinst hugo
+cinst go
+
+# add tools required for unattended builds to path variable
+$LyxPath  = Resolve-Path "${env:ProgramFiles(x86)}\LyX*\bin"
+If([string]::IsNullOrEmpty($LyXPath)) { $LyxPath = Resolve-Path "${env:ProgramFiles}\LyX*\bin" }
+$7ZipPath = "${env:ProgramFiles}\7-Zip"
+$NSISPath  = Resolve-Path "${env:ProgramFiles(x86)}\NSIS"
+If([string]::IsNullOrEmpty($NSISPath)) { $NSISPath = Resolve-Path "${env:ProgramFiles}\NSIS" }
+$doxygenPath = Resolve-Path "${env:ProgramFiles}\doxygen\bin"
+
+[Environment]::SetEnvironmentVariable("Path", "$env:Path;$LyXPath;$7ZipPath;$NSISPath;$doxygenPath", [System.EnvironmentVariableTarget]::Machine)
+
+# refresh path variable
+# $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+
+# check for MiKTeX updates
+mpm --admin --update
+
+If(-Not(Test-Path $env:ProgramData\WinFellow-DevEnvironment-Boxstarter-FinalReboot.txt)) {
+    New-Item -ItemType "File" -Path $env:ProgramData\WinFellow-DevEnvironment-Boxstarter-FinalReboot.txt
+    Invoke-Reboot
+}

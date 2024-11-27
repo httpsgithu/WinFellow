@@ -1,0 +1,52 @@
+name: MSBuild
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+env:
+  # Configuration type to build.
+  # You can convert this to a build matrix if you need coverage of multiple configuration types.
+  # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
+  BUILD_CONFIGURATION: Release
+  BUILD_PLATFORM: x64
+  # Path to the solution file relative to the root of the project.
+  SOLUTION_FILE_PATH: fellow\SRC\WinFellow.sln
+  SOLUTION_DIRECTORY: fellow\SRC
+  WINFELLOW_CORE_TESTS_DIRECTORY: fellow\SRC\WinFellow.Core.Tests\x64\Release\
+  WINFELLOW_HARDFILE_TESTS_DIRECTORY: fellow\SRC\WinFellow.Hardfile.Tests\x64\Release\
+
+permissions:
+  contents: read
+  checks: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Build
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        # Add additional options to the MSBuild command line here (like platform or verbosity level).
+        # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
+        run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:Platform=${{env.BUILD_PLATFORM}} ${{env.SOLUTION_FILE_PATH}}
+
+      - name: Run core unit-tests
+        working-directory: ${{env.WINFELLOW_CORE_TESTS_DIRECTORY}}
+        run: .\WinFellow.Core.Tests.exe --reporter JUnit::out=WinFellowCoreTestsResult-junit.xml
+
+      - name: Run hardfile unit-tests
+        working-directory: ${{env.WINFELLOW_HARDFILE_TESTS_DIRECTORY}}
+        run: .\WinFellow.Hardfile.Tests.exe --reporter JUnit::out=WinFellowHardfileTestsResult-junit.xml
+
+      - name: Check test results
+        uses: mikepenz/action-junit-report@v5
+        with:
+          report_paths: '${{env.SOLUTION_DIRECTORY}}\**\*junit.xml'
